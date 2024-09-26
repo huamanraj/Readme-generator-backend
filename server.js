@@ -66,6 +66,13 @@ async function checkRateLimit() {
   }
 }
 
+
+app.get('/', (req, res) => {
+  res.json({ message: 'Hello from the backend! Deployment is working.' });
+});
+
+
+
 // Generate README based on GitHub repo info and OpenAI's response
 app.post('/generate-readme', rateLimitMiddleware, async (req, res) => {
   const { repoUrl } = req.body;
